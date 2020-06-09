@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-
-  # resources :estudiantes
-  # resources :carros
+  # get '/votos', to: 'personas#votos'
+  # put '/estadistica', to: 'personas#estadisitica'
   resources :personas
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
