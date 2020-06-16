@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200603200013) do
+ActiveRecord::Schema.define(version: 20200616204647) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "direccion"
+    t.integer "persona_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["persona_id"], name: "index_addresses_on_persona_id"
+  end
 
   create_table "carros", force: :cascade do |t|
     t.string "placa"
@@ -40,6 +48,30 @@ ActiveRecord::Schema.define(version: 20200603200013) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "telefonos", force: :cascade do |t|
+    t.string "telefono"
+    t.boolean "estado"
+    t.integer "persona_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["persona_id"], name: "index_telefonos_on_persona_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "nombre"
+    t.string "direccion"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "sexo"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
