@@ -5,4 +5,5 @@ class Persona < ApplicationRecord
 
   has_many :addresses
   has_many :telefonos
+  has_many :carros
 end

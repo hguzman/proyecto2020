@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200616204647) do
+ActiveRecord::Schema.define(version: 20200617193809) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "direccion"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 20200616204647) do
     t.string "placa"
     t.integer "modelo"
     t.string "color"
-    t.boolean "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "persona_id"
+    t.string "vin"
+    t.index ["persona_id"], name: "index_carros_on_persona_id"
   end
 
   create_table "estudiantes", force: :cascade do |t|

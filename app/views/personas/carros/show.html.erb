@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Placa:</strong>
+  <%= @carro.placa %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @carro.modelo %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @carro.color %>
+</p>
+
+<%= link_to 'Edit', edit_persona_carro_path(@persona, @carro) %> |
+<%= link_to 'Back', carros_path %>

@@ -1,6 +1,10 @@
 class PersonasController < ApplicationController
+  # render layout: "pepito"
+
   before_action :authenticate_user!
   before_action :set_persona, only: [:show, :edit, :update, :destroy]
+
+
 
   def index
     @personas = Persona.all
