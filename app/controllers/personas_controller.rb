@@ -12,9 +12,11 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
+    2.times {@persona.telefonos.build}
   end
 
   def show
+    @telefonos = @persona.telefonos
   end
 
   def edit
@@ -52,7 +54,9 @@ class PersonasController < ApplicationController
   end
 
   def persona_params
-    params.require(:persona).permit(:cedula, :nombre, :estatura, :estado, :sexo, :email)
+    params.require(:persona).permit(:cedula, :nombre,
+      :estatura, :estado, :sexo,
+      :email, telefonos_attributes: [:telefono])
   end
 
 end

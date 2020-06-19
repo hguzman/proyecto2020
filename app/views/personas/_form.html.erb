@@ -5,5 +5,10 @@
   <%= f.input :estado %>
   <%= f.input :sexo %>
   <%= f.input :email %>
+
+  <%= f.simple_fields_for :telefonos do |t| %>
+    <%= t.input :telefono %>
+  <% end %>
+
   <%= f.button :submit %>
 <% end %>

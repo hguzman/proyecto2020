@@ -7,9 +7,14 @@
       <dd><%= @persona.nombre %></dd>
       <dt>Email</dt>
       <dd><%= @persona.email %></dd>
+
+      <%= render partial: "telefono", collection: @telefonos %>
     </dl>
 
   <%= link_to "Ver todos", personas_path %>
+  <hr>
+    <%= link_to "Carros asociados a el usuario #{@persona.nombre}", persona_carros_path(@persona) %>
+
 
   </div>
 </div>

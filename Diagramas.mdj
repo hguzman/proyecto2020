@@ -1152,16 +1152,16 @@
 										"$ref": "AAAAAAFyvty1msI4gjk="
 									},
 									"font": "Arial;13;0",
-									"left": 469,
+									"left": 463,
 									"top": 164,
-									"width": 6.5,
+									"width": 19.5126953125,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
 									"hostEdge": {
 										"$ref": "AAAAAAFyvty1msI6JLM="
 									},
-									"text": "*"
+									"text": "1..*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -1670,9 +1670,9 @@
 										"$ref": "AAAAAAFyw8S3+5wFAUs="
 									},
 									"font": "Arial;13;0",
-									"left": 428,
+									"left": 427,
 									"top": 416,
-									"width": 5.05908203125,
+									"width": 6.5,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -1838,7 +1838,7 @@
 								"reference": {
 									"$ref": "AAAAAAFyvtvIgcGgWDs="
 								},
-								"multiplicity": "*"
+								"multiplicity": "1..*"
 							}
 						},
 						{
@@ -1870,6 +1870,37 @@
 									"$ref": "AAAAAAFyw8OoW5nXoZs="
 								},
 								"multiplicity": "*"
+							}
+						},
+						{
+							"_type": "UMLAssociation",
+							"_id": "AAAAAAFyzkR86EzxBa0=",
+							"_parent": {
+								"$ref": "AAAAAAFyvqsv0b4EVns="
+							},
+							"end1": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFyzkR86EzyCfg=",
+								"_parent": {
+									"$ref": "AAAAAAFyzkR86EzxBa0="
+								},
+								"reference": {
+									"$ref": "AAAAAAFyvqsv0b4EVns="
+								},
+								"visibility": "protected",
+								"aggregation": "composite",
+								"multiplicity": "1"
+							},
+							"end2": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFyzkR86EzzCY4=",
+								"_parent": {
+									"$ref": "AAAAAAFyzkR86EzxBa0="
+								},
+								"reference": {
+									"$ref": "AAAAAAFyzkRht0x2yKU="
+								},
+								"multiplicity": "1"
 							}
 						}
 					],
@@ -2036,6 +2067,14 @@
 							"type": "Boolean"
 						}
 					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFyzkRht0x2yKU=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Otra"
 				}
 			]
 		}

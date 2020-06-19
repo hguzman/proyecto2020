@@ -6,4 +6,6 @@ class Persona < ApplicationRecord
   has_many :addresses
   has_many :telefonos
   has_many :carros
+
+  accepts_nested_attributes_for :telefonos
 end

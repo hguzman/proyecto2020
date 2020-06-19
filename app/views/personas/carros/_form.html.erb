@@ -1,4 +1,4 @@
-<%= simple_form_for @carro do |f| %>
+<%= simple_form_for [@persona, @carro] do |f| %>
   <%= f.input :placa %>
   <%= f.input :color %>
   <%= f.button :submit %>

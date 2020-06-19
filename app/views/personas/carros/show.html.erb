@@ -15,4 +15,5 @@
 </p>
 
 <%= link_to 'Edit', edit_persona_carro_path(@persona, @carro) %> |
-<%= link_to 'Back', carros_path %>
+<%= link_to 'Todos los carros', persona_carros_path(@persona) %> |
+<%= link_to "Eliminar", persona_carro_path(@persona, @carro), method: :delete, data: {confirm: "Ojo!!"} %>
