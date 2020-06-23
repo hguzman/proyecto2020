@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200617193809) do
+ActiveRecord::Schema.define(version: 20200623204757) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "direccion"
@@ -29,6 +29,31 @@ ActiveRecord::Schema.define(version: 20200617193809) do
     t.integer "persona_id"
     t.string "vin"
     t.index ["persona_id"], name: "index_carros_on_persona_id"
+  end
+
+  create_table "carros_colores", id: false, force: :cascade do |t|
+    t.integer "carro_id", null: false
+    t.integer "color_id", null: false
+    t.index ["carro_id", "color_id"], name: "index_carros_colores_on_carro_id_and_color_id"
+  end
+
+  create_table "colores", force: :cascade do |t|
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "empresas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "direccion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "empresas_personas", id: false, force: :cascade do |t|
+    t.integer "empresa_id", null: false
+    t.integer "persona_id", null: false
+    t.index ["empresa_id", "persona_id"], name: "index_empresas_personas_on_empresa_id_and_persona_id"
   end
 
   create_table "estudiantes", force: :cascade do |t|
