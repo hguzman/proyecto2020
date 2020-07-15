@@ -4,14 +4,15 @@ namespace :sc do
     require "httparty"
     OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-    [001..999].each do |numero|
-      mechanize = Mechanize.new
-      page = mechanize.post('https://orion.barranquilla.gov.co:8787/mov_liquidacion/datosBasicos.do',{"txtDato" => "KFU#{numero}", "Buscar" => "Buscar"})
-      # puts "Respuesta body => #{page.body}"
-      todos_los_input = page.search('input')
-      puts "Input => #{todos_los_input}"
+    mechanize = Mechanize.new
+    page = mechanize.post('https://orion.barranquilla.gov.co:8787/mov_liquidacion/datosBasicos.do',{"txtDato" => "KFU294", "Buscar" => "Buscar"})
+    # pp page
+    form = page.forms.first
+    form.fields.each { |f| puts "#{f.name} : #{f.value}" }
 
-    end
+    # puts "Respuesta body => #{page.body}"
+    # todos_los_input = page.search('input')
+    # puts "Input => #{todos_los_input}"
 
   end
 
