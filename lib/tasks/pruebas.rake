@@ -43,7 +43,14 @@ namespace :sc do
   desc "Extrae información de Santander"
   task santander: :environment do
     mechanize = Mechanize.new
-
+    page = mechanize.post('https://iuva.syc.com.co/consulta/detalladoVehiculo.aspx',{"idCliente" => "1", "placa" => "CIM283"})
+    # puts page.body
+    # datos = page.at '.textDesc'
+    datos = page.search '.textDesc'
+    # puts "Datos => #{datos}"
+    datos.each do |dato|
+      puts "#{dato.text}" if dato.text.present?
+    end
   end
 
 end
