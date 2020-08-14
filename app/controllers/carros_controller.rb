@@ -15,10 +15,12 @@ class CarrosController < ApplicationController
   # GET /carros/new
   def new
     @carro = Carro.new
+    authorize @carro
   end
 
   # GET /carros/1/edit
   def edit
+    
   end
 
   # POST /carros

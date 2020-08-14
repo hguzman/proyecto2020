@@ -63,3 +63,5 @@ gem 'simple_form'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'httparty'
 gem 'mechanize', '~> 2.7', '>= 2.7.5'
+gem "rolify" # Roles
+gem "pundit" # Autorización dependiendo del rol

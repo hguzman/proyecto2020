@@ -7,16 +7,16 @@ namespace :sc do
 
     mechanize = Mechanize.new
     puts "NOMBRES"
-    (250..260).each do |numero|
-      page = mechanize.post('https://orion.barranquilla.gov.co:8787/mov_liquidacion/datosBasicos.do',{"txtDato" => "KFU#{numero}", "Buscar" => "Buscar"})
+    # (250..260).each do |numero|
+      page = mechanize.post('https://orion.barranquilla.gov.co:8787/mov_liquidacion/datosBasicos.do',{"txtDato" => "KFU294", "Buscar" => "Buscar"})
       # pp page
       form = page.forms.first
-      # form.fields.each { |objeto| puts "#{objeto.name} : #{objeto.value}" }
-      ob =  form.fields.last
-      puts "#{ob.value}" if ob.value.present?
+      form.fields.each { |objeto| puts "#{objeto.name} : #{objeto.value}" }
+      # ob =  form.fields.last
+      # puts "#{ob.value}" if ob.value.present?
       # puts "-----------------------------------"
-      sleep(1)
-    end
+    #   sleep(1)
+    # end
 
     # form.fields.each do |objeto|
     #   puts "#{objeto.name} : #{objeto.value}"
