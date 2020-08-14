@@ -65,3 +65,5 @@ gem 'httparty'
 gem 'mechanize', '~> 2.7', '>= 2.7.5'
 gem "rolify" # Roles
 gem "pundit" # Autorización dependiendo del rol
+gem "chartkick"
+gem 'groupdate'
