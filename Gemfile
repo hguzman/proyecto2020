@@ -62,7 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'httparty'
-gem 'mechanize', '~> 2.7', '>= 2.7.5'
+gem 'mechanize', '~> 2.8'
 gem "rolify" # Roles
 gem "pundit" # Autorización dependiendo del rol
 gem "chartkick"
